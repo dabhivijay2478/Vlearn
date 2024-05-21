@@ -17,6 +17,7 @@ import {
     TooltipTrigger,
     TooltipProvider
 } from "@/components/ui/tooltip"
+import { ChatBubbleIcon, DashboardIcon, HomeIcon } from "@radix-ui/react-icons"
 
 
 export default function Sidebar() {
@@ -28,7 +29,7 @@ export default function Sidebar() {
                     href="/dashboard"
                     className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
                 >
-                    <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
+                    <DashboardIcon className="h-4 w-4 transition-all group-hover:scale-110" />
                     <span className="sr-only">Vlearn</span>
                 </Link>
                 <TooltipProvider>
@@ -75,7 +76,7 @@ export default function Sidebar() {
                                 href="/dashboard/cheatsheet"
                                 className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
                             >
-                                <StickyNote className="h-5 w-5"/>
+                                <StickyNote className="h-5 w-5" />
                                 <span className="sr-only">Cheat Sheets</span>
                             </Link>
                         </TooltipTrigger>
@@ -92,6 +93,18 @@ export default function Sidebar() {
                             </Link>
                         </TooltipTrigger>
                         <TooltipContent side="right">Blogs and YouTube Links</TooltipContent>
+                    </Tooltip>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <Link
+                                href="/dashboard/ai-mentor"
+                                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                            >
+                                <ChatBubbleIcon className="h-5 w-5" />
+                                <span className="sr-only">AI Mentor</span>
+                            </Link>
+                        </TooltipTrigger>
+                        <TooltipContent side="right">AI Mentor</TooltipContent>
                     </Tooltip>
                 </TooltipProvider>
             </nav>

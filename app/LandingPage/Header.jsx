@@ -43,7 +43,9 @@ export default function Header() {
                             <Link className="hover:underline underline-offset-4" href="#pricing">
                                 Pricing
                             </Link>
-
+                            <Link className="hover:underline underline-offset-4" href="/explore-features">
+                                Explore
+                            </Link>
                         </nav>
                     </motion.div>
 

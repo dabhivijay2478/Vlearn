@@ -1,32 +1,68 @@
-'use client'
-import React from 'react'
+"use client";
 
-import { motion } from 'framer-motion';
-
+import React, { useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export default function Hero1() {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
 
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.5,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
   return (
     <>
       <section
-        className="w-full  dark:bg-gray-950 text-gray-950 dark:text-gray-50 py-24 md:py-32 lg:py-40"
+        className="w-full dark:bg-gray-950 text-gray-950 dark:text-gray-50 py-24 md:py-32 lg:py-40"
         id="features"
+        ref={ref}
       >
-        <div className="container mx-auto px-6 md:px-8 lg:px-12">
-          <motion.div>
-            <motion.h1 className=' flex justify-center text-6xl'>
+        <motion.div
+          className="container mx-auto px-6 md:px-8 lg:px-12"
+          variants={containerVariants}
+          initial="hidden"
+          animate={controls}
+        >
+          <motion.div variants={itemVariants}>
+            <motion.h1
+              className='flex justify-center text-6xl'
+              variants={itemVariants}
+            >
               Features
             </motion.h1>
           </motion.div>
           <motion.div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
+            variants={containerVariants}
           >
             {[
               { icon: CodeIcon, title: 'Interactive Coding Challenges', description: 'Sharpen your skills with a vast library of interactive coding challenges, ranging from beginner to advanced levels.' },
@@ -47,10 +83,10 @@ export default function Hero1() {
               </motion.div>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       </section>
     </>
-  )
+  );
 }
 
 

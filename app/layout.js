@@ -12,7 +12,7 @@ export const metadata = {
   }
 };
 import { ThemeProvider } from "@/components/theme-provider"
-
+import { Toaster } from "@/components/ui/toaster"
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -26,6 +26,7 @@ export default function RootLayout({ children }) {
         >
           {children}
           {/* <Footer /> */}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

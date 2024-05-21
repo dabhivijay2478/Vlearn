@@ -8,7 +8,7 @@ import React, {
     useRef,
     useEffect,
 } from "react";
-
+import { motion } from 'framer-motion';
 const MouseEnterContext = createContext(undefined);
 
 export const CardContainer = ({
@@ -38,34 +38,60 @@ export const CardContainer = ({
         containerRef.current.style.transform = `rotateY(0deg) rotateX(0deg)`;
     };
 
+
+
+
+    const containerVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 1.5,
+                staggerChildren: 0.2,
+            },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    };
+
     return (
-        <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
-            <div
-                className={cn(
-                    "py-20 flex items-center justify-center",
-                    containerClassName
-                )}
-                style={{
-                    perspective: "1000px",
-                }}
-            >
-                <div
-                    ref={containerRef}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseMove={handleMouseMove}
-                    onMouseLeave={handleMouseLeave}
+      
+
+            <MouseEnterContext.Provider value={[isMouseEntered, setIsMouseEntered]}>
+                <motion.div
                     className={cn(
-                        "flex items-center justify-center relative transition-all duration-200 ease-linear ml-16",
-                        className
+                        "py-20 flex items-center justify-center",
+                        containerClassName
                     )}
                     style={{
-                        transformStyle: "preserve-3d",
+                        perspective: "1000px",
                     }}
+                    variants={containerVariants}
+
                 >
-                    {children}
-                </div>
-            </div>
-        </MouseEnterContext.Provider>
+                    <motion.div
+                        ref={containerRef}
+                        onMouseEnter={handleMouseEnter}
+                        variants={itemVariants}
+                        onMouseMove={handleMouseMove}
+                        onMouseLeave={handleMouseLeave}
+                        className={cn(
+                            "flex items-center justify-center relative transition-all duration-200 ease-linear ml-5",
+                            className
+                        )}
+                        style={{
+                            transformStyle: "preserve-3d",
+                        }}
+                    >
+                        {children}
+                    </motion.div>
+                </motion.div>
+            </MouseEnterContext.Provider>
+     
     );
 };
 

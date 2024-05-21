@@ -156,7 +156,13 @@ export default function Navbar() {
                             Settings
                         </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>Support</DropdownMenuItem>
+                    <DropdownMenuItem>  
+                        <Link
+                        href="/dashboard/support"
+                        className=" rounded-lg  transition-colors hover:text-foreground cursor-pointer"
+                    >
+                        Support
+                    </Link></DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>Logout</DropdownMenuItem>
                 </DropdownMenuContent>
