@@ -8,7 +8,7 @@ import React, {
     useRef,
     useEffect,
 } from "react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 const MouseEnterContext = createContext(undefined);
 
 export const CardContainer = ({

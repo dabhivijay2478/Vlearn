@@ -51,22 +51,22 @@ export default function Support() {
                                     <div className="space-y-2">
                                         <h4 className="text-base font-semibold">How do I create an account?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            To create an account, visit our sign-up page and fill out the required information. You'll need to
+                                            To create an account, visit our sign-up page and fill out the required information. You&#39;ll need to
                                             provide your name, email address, and a secure password.
                                         </p>
                                     </div>
                                     <div className="space-y-2">
                                         <h4 className="text-base font-semibold">How do I reset my password?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            If you've forgotten your password, you can reset it by clicking the "Forgot Password" link on the
+                                            If you&#39;ve forgotten your password, you can reset it by clicking the &#34;Forgot Password&#34; link on the
                                             login page. Follow the instructions to reset your password.
                                         </p>
                                     </div>
                                     <div className="space-y-2">
                                         <h4 className="text-base font-semibold">How do I update my profile information?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            To update your profile information, log in to your account and navigate to the "Settings" or
-                                            "Profile" section. From there, you can edit your name, email, and other personal details.
+                                            To update your profile information, log in to your account and navigate to the &#34;Settings&#34; or
+                                            &#34;Profile&#34; section. From there, you can edit your name, email, and other personal details.
                                         </p>
                                     </div>
                                 </CollapsibleContent>
@@ -85,8 +85,8 @@ export default function Support() {
                                     <div className="space-y-2">
                                         <h4 className="text-base font-semibold">How do I access the course materials?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            Once you've enrolled in a course, you can access the course materials by logging in to your
-                                            account and navigating to the "Courses" section. From there, you can view the course curriculum,
+                                            Once you&#39;ve enrolled in a course, you can access the course materials by logging in to your
+                                            account and navigating to the &#34;Courses&#34; section. From there, you can view the course curriculum,
                                             watch video lessons, and complete assignments.
                                         </p>
                                     </div>
@@ -118,17 +118,17 @@ export default function Support() {
                                 </CollapsibleTrigger>
                                 <CollapsibleContent className="space-y-4 rounded-md border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-950">
                                     <div className="space-y-2">
-                                        <h4 className="text-base font-semibold">Why can't I log in to my account?</h4>
+                                        <h4 className="text-base font-semibold">Why can&#39;t I log in to my account?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            If you're having trouble logging in, make sure you're using the correct email address and
-                                            password. If you've forgotten your password, you can reset it by clicking the "Forgot Password"
+                                            If you&#39;re having trouble logging in, make sure you&#39;re using the correct email address and
+                                            password. If you&#39;ve forgotten your password, you can reset it by clicking the &#34;Forgot Password&#34;
                                             link on the login page.
                                         </p>
                                     </div>
                                     <div className="space-y-2">
-                                        <h4 className="text-base font-semibold">Why can't I access a specific course?</h4>
+                                        <h4 className="text-base font-semibold">Why can&#39;t I access a specific course?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            If you're unable to access a course, check your enrollment status and make sure you've completed
+                                            If you&#39;re unable to access a course, check your enrollment status and make sure you&#39;ve completed
                                             the necessary prerequisites. If the issue persists, please contact our support team for
                                             assistance.
                                         </p>
@@ -136,7 +136,7 @@ export default function Support() {
                                     <div className="space-y-2">
                                         <h4 className="text-base font-semibold">How do I troubleshoot video playback issues?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            If you're experiencing issues with video playback, try refreshing the page, checking your internet
+                                            If you&#39;re experiencing issues with video playback, try refreshing the page, checking your internet
                                             connection, or using a different browser or device. If the problem continues, please let us know
                                             so we can investigate further.
                                         </p>
@@ -164,14 +164,14 @@ export default function Support() {
                                     <div className="space-y-2">
                                         <h4 className="text-base font-semibold">How do I upgrade or downgrade my subscription?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            To change your subscription plan, log in to your account and navigate to the "Billing" or
-                                            "Subscription" section. From there, you can upgrade or downgrade your plan as needed.
+                                            To change your subscription plan, log in to your account and navigate to the &#34;Billing&#34; or
+                                            &#34;Subscription&#34; section. From there, you can upgrade or downgrade your plan as needed.
                                         </p>
                                     </div>
                                     <div className="space-y-2">
                                         <h4 className="text-base font-semibold">Can I get a refund if I cancel my subscription?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            We offer a 30-day money-back guarantee on all our subscription plans. If you're not satisfied with
+                                            We offer a 30-day money-back guarantee on all our subscription plans. If you&#39;re not satisfied with
                                             our platform, you can cancel your subscription and request a full refund within the first 30 days.
                                         </p>
                                     </div>
@@ -189,17 +189,17 @@ export default function Support() {
                                 </CollapsibleTrigger>
                                 <CollapsibleContent className="space-y-4 rounded-md border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-950">
                                     <div className="space-y-2">
-                                        <h4 className="text-base font-semibold">What is your company's mission?</h4>
+                                        <h4 className="text-base font-semibold">What is your company&#39;s mission?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
                                             Our mission is to empower software engineers and developers with the knowledge and skills they
-                                            need to succeed in their careers. We're committed to providing high-quality, accessible education
+                                            need to succeed in their careers. We&#39;re committed to providing high-quality, accessible education
                                             that helps our learners achieve their goals.
                                         </p>
                                     </div>
                                     <div className="space-y-2">
                                         <h4 className="text-base font-semibold">What is your privacy policy?</h4>
                                         <p className="text-sm text-gray-500 dark:text-gray-400">
-                                            We take the privacy and security of our users' data very seriously. Our privacy policy outlines
+                                            We take the privacy and security of our users&#39; data very seriously. Our privacy policy outlines
                                             how we collect, use, and protect your personal information. You can review the full policy on our
                                             website.
                                         </p>

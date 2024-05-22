@@ -94,7 +94,7 @@ export default function Resources() {
                                     <li>
                                         <Link className="flex items-center gap-2 font-medium hover:text-purple-500" href="#">
                                             <PlayIcon className="h-5 w-5" />
-                                            Beginner's Guide to Web Development
+                                            Beginner&#39;s Guide to Web Development
                                         </Link>
                                     </li>
                                     <li>

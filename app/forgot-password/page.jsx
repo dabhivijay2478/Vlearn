@@ -10,7 +10,7 @@ export default function Forgot() {
                 <div className="text-center">
                     <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-gray-50">Forgot your password?</h2>
                     <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
-                        Enter the email address associated with your account and we'll send you a link to reset your password.
+                        Enter the email address associated with your account and we&#39;ll send you a link to reset your password.
                     </p>
                 </div>
                 <form className="space-y-6">

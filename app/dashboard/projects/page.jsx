@@ -1,6 +1,7 @@
 
 import { AvatarImage, AvatarFallback, Avatar } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 import Link from "next/link"
 
 export default function Projects() {
@@ -10,7 +11,7 @@ export default function Projects() {
         <div>
           <h1 className="text-3xl md:text-4xl font-bold">Acme Project Planner</h1>
           <p className="text-gray-500 dark:text-gray-400 mt-2">
-            A comprehensive project management tool to streamline your team's workflow.
+            A comprehensive project management tool to streamline your team&#39;s workflow.
           </p>
         </div>
         <div>
@@ -55,7 +56,7 @@ export default function Projects() {
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
               <h3 className="text-lg font-semibold">Reporting and Analytics</h3>
               <p className="text-gray-500 dark:text-gray-400 mt-2">
-                Generate comprehensive reports and analytics to gain valuable insights into your project's progress and
+                Generate comprehensive reports and analytics to gain valuable insights into your project&#39;s progress and
                 performance.
               </p>
             </div>
@@ -65,7 +66,7 @@ export default function Projects() {
           <h2 className="text-2xl md:text-3xl font-bold">Technologies Used</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-4">
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 flex items-center justify-center">
-              <img
+              <Image
                 alt="React"
                 height={40}
                 src="/placeholder.svg"
@@ -77,7 +78,7 @@ export default function Projects() {
               />
             </div>
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 flex items-center justify-center">
-              <img
+              <Image
                 alt="Next.js"
                 height={40}
                 src="/placeholder.svg"
@@ -89,7 +90,7 @@ export default function Projects() {
               />
             </div>
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 flex items-center justify-center">
-              <img
+              <Image
                 alt="Tailwind CSS"
                 height={40}
                 src="/placeholder.svg"
@@ -101,7 +102,7 @@ export default function Projects() {
               />
             </div>
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 flex items-center justify-center">
-              <img
+              <Image
                 alt="MongoDB"
                 height={40}
                 src="/placeholder.svg"
@@ -146,7 +147,7 @@ export default function Projects() {
         <div>
           <h2 className="text-2xl md:text-3xl font-bold">Screenshots and Demos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-            <img
+            <Image
               alt="Screenshot 1"
               className="rounded-lg object-cover"
               height={450}
@@ -157,7 +158,7 @@ export default function Projects() {
               }}
               width={800}
             />
-            <img
+            <Image
               alt="Screenshot 2"
               className="rounded-lg object-cover"
               height={450}
@@ -221,7 +222,7 @@ export default function Projects() {
             <div className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4">
               <h3 className="text-lg font-semibold">Provide Feedback</h3>
               <p className="text-gray-500 dark:text-gray-400 mt-2">
-                We value your feedback! Please share your thoughts, suggestions, or any issues you've encountered while
+                We value your feedback! Please share your thoughts, suggestions, or any issues you&#39;ve encountered while
                 using the Acme Project Planner.
               </p>
               <Button className="mt-4">Submit Feedback</Button>

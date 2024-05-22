@@ -5,11 +5,12 @@
  */
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 export default function Component() {
     return (
         <div className="w-full bg-gray-100 dark:bg-gray-900">
-           
+
             <main>
                 <section className="container mx-auto py-12 px-4 md:py-16 md:px-6 lg:py-20">
                     <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
@@ -26,7 +27,7 @@ export default function Component() {
                                 <Button variant="outline">Learn More</Button>
                             </div>
                         </div>
-                        <img
+                        <Image
                             alt="Hero Image"
                             className="mx-auto rounded-lg object-cover object-center"
                             height="400"
@@ -55,7 +56,7 @@ export default function Component() {
                                 <span className="text-gray-900 dark:text-gray-50 font-medium">Personalized Learning Dashboard</span>
                             </div>
                         </div>
-                        <img
+                        <Image
                             alt="Personalized Learning Dashboard"
                             className="mx-auto rounded-lg object-cover object-center"
                             height="400"
@@ -70,7 +71,7 @@ export default function Component() {
                 </section>
                 <section className="container mx-auto py-12 px-4 md:py-16 md:px-6 lg:py-20">
                     <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
-                        <img
+                        <Image
                             alt="AI-Powered Mentor Bot"
                             className="mx-auto rounded-lg object-cover object-center"
                             height="400"
@@ -113,7 +114,7 @@ export default function Component() {
                                 <span className="text-gray-900 dark:text-gray-50 font-medium">Curated Project Recommendations</span>
                             </div>
                         </div>
-                        <img
+                        <Image
                             alt="Curated Project Recommendations"
                             className="mx-auto rounded-lg object-cover object-center"
                             height="400"
@@ -127,7 +128,7 @@ export default function Component() {
                     </div>
                 </section>
             </main>
-           
+
         </div>
     )
 }

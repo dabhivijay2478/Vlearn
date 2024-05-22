@@ -1,6 +1,6 @@
-'use client'
+"use client"
 import Link from "next/link"
-import { Player } from '@lottiefiles/react-lottie-player';
+import { Player } from "@lottiefiles/react-lottie-player";
 import ErroranimationUrl from "../animations/lottie/404";
 
 export default function NotFound() {
@@ -19,7 +19,7 @@ export default function NotFound() {
                     Oops! Page not found.
                 </h1>
                 <p className="text-gray-500 dark:text-gray-400 text-lg">
-                    The page you're looking for doesn't exist. Let's get you back on track.
+                    The page you&#39;re looking for doesn&#39;t exist. Let&#39;s get you back on track.
                 </p>
                 <Link
                     className="inline-flex items-center justify-center rounded-md bg-gray-900 px-4 py-2 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300"
