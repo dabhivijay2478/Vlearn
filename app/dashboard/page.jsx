@@ -1,14 +1,12 @@
 'use client'
 import { Button } from "@/components/ui/button"
-import { CardContent, Card } from "@/components/ui/card"
 import { Player } from '@lottiefiles/react-lottie-player';
 import welcomeanimation from "../../animations/lottie/welcome.json";
-import {
-    Avatar,
-    AvatarFallback,
-    AvatarImage,
-} from "@/components/ui/avatar"
 
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Label } from "@/components/ui/label"
+import { Textarea } from "@/components/ui/textarea"
+import { ResponsiveLine } from "@nivo/line"
 
 import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
 
@@ -31,205 +29,236 @@ export default function Dashboard() {
                     </div>
                     <Player
                         src={welcomeanimation}
-                        className="player w-72 h-72"
+                        className="w-72 h-72 md:w-96 md:h-96"
                         loop
                         autoplay
-
                     />
                 </div>
             </section>
-            <section className="container px-4 md:px-6">
-                <div className="space-y-4">
-                    <div>
-                        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Your Active Courses</h2>
-                        <p className="text-gray-500 md:text-lg dark:text-gray-400">
-                            Stay on top of your learning with these active courses.
-                        </p>
-                    </div>
-                    <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <section className="container mx-auto px-4 md:px-6 flex min-h-[calc(100vh_-_theme(spacing.16))] ">
+                <div className="max-w-7xl w-full mx-auto grid gap-6">
+                    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                         <Card>
-                            <CardContent className="flex flex-col items-start gap-2 mt-3">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                                    Web Development
-                                </div>
-                                <h3 className="text-lg font-semibold">Introduction to React</h3>
-                                <p className="text-gray-500 dark:text-gray-400">
-                                    Learn the fundamentals of React and build your first web application.
-                                </p>
-                                <div className="mt-auto flex w-full items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <ClockIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                                        <span className="text-sm text-gray-500 dark:text-gray-400">12 hrs</span>
-                                    </div>
-                                    <Button size="sm">Continue</Button>
-                                </div>
+                            <CardHeader>
+                                <CardTitle>Weekly Learning Graph</CardTitle>
+                                <CardDescription>
+                                    Comparison of most visited technologies and languages this week vs last week.
+                                </CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <LineChart className="aspect-[9/4]" />
                             </CardContent>
                         </Card>
                         <Card>
-                            <CardContent className="flex flex-col items-start gap-2  mt-3">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Design</div>
-                                <h3 className="text-lg font-semibold">Figma Essentials</h3>
-                                <p className="text-gray-500 dark:text-gray-400">
-                                    Master the fundamentals of Figma and create stunning designs.
-                                </p>
-                                <div className="mt-auto flex w-full items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <ClockIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                                        <span className="text-sm text-gray-500 dark:text-gray-400">8 hrs</span>
+                            <CardHeader>
+                                <CardTitle>Tech and Language Visits</CardTitle>
+                                <CardDescription>Total visits and time spent on each technology and language.</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="grid gap-4 text-sm">
+                                    <div className="flex items-center justify-between">
+                                        <div>JavaScript</div>
+                                        <div className="font-medium">
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">1,234</span> visits
+                                        </div>
                                     </div>
-                                    <Button size="sm">Continue</Button>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardContent className="flex flex-col items-start gap-2  mt-3">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                                    Data Science
-                                </div>
-                                <h3 className="text-lg font-semibold">Python for Data Analysis</h3>
-                                <p className="text-gray-500 dark:text-gray-400">Dive into the world of data analysis using Python.</p>
-                                <div className="mt-auto flex w-full items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <ClockIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                                        <span className="text-sm text-gray-500 dark:text-gray-400">15 hrs</span>
+                                    <div className="flex items-center justify-between">
+                                        <div>React</div>
+                                        <div className="font-medium">
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">987</span> visits
+                                        </div>
                                     </div>
-                                    <Button size="sm">Continue</Button>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <CardContent className="flex flex-col items-start gap-2  mt-3">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Marketing</div>
-                                <h3 className="text-lg font-semibold">Social Media Marketing</h3>
-                                <p className="text-gray-500 dark:text-gray-400">
-                                    Learn how to effectively leverage social media for your business.
-                                </p>
-                                <div className="mt-auto flex w-full items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <ClockIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                                        <span className="text-sm text-gray-500 dark:text-gray-400">10 hrs</span>
+                                    <div className="flex items-center justify-between">
+                                        <div>Python</div>
+                                        <div className="font-medium">
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">789</span> visits
+                                        </div>
                                     </div>
-                                    <Button size="sm">Continue</Button>
+                                    <div className="flex items-center justify-between">
+                                        <div>TypeScript</div>
+                                        <div className="font-medium">
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">654</span> visits
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center justify-between">
+                                        <div>Vue.js</div>
+                                        <div className="font-medium">
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">543</span> visits
+                                        </div>
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>
                     </div>
-                </div>
-            </section>
-            <section className="container px-4 md:px-6">
-                <div className="space-y-4">
-                    <div>
-                        <h2 className="text-2xl font-bold tracking-tighter sm:text-3xl">Featured Courses</h2>
-                        <p className="text-gray-500 md:text-lg dark:text-gray-400">Explore our latest and most popular courses.</p>
-                    </div>
-                    <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                        <Card >
-                            <Avatar className="m-2 " >
-                                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                            <CardContent className="space-y-2 p-4">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                                    Development
-                                </div>
-                                <h3 className="text-lg font-semibold">Mastering TypeScript: From Beginner to Expert</h3>
-                                <p className="text-gray-500 dark:text-gray-400">
-                                    Dive deep into the world of TypeScript and unlock its full potential.
-                                </p>
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <ClockIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                                        <span className="text-sm text-gray-500 dark:text-gray-400">20 hrs</span>
+                    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+                        <Card>
+                            <CardHeader>
+                                <CardTitle>Login Tracking</CardTitle>
+                                <CardDescription>Number of logins, login streaks, and average session duration.</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="grid gap-4 text-sm">
+                                    <div className="flex items-center justify-between">
+                                        <div>Logins</div>
+                                        <div className="font-medium">
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">1,234</span>
+                                        </div>
                                     </div>
-                                    <Button size="sm">Enroll</Button>
+                                    <div className="flex items-center justify-between">
+                                        <div>Login Streak</div>
+                                        <div className="font-medium">
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">7</span> days
+                                        </div>
+                                    </div>
+                                    <div className="flex items-center justify-between">
+                                        <div>Avg. Session Duration</div>
+                                        <div className="font-medium">
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">45</span> minutes
+                                        </div>
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>
                         <Card>
-                            <Avatar className="m-2 " >
-                                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                            <CardContent className="space-y-2 p-4">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Design</div>
-                                <h3 className="text-lg font-semibold">Mastering Adobe XD: From Beginner to Pro</h3>
-                                <p className="text-gray-500 dark:text-gray-400">
-                                    Unlock your design potential with this comprehensive XD course.
-                                </p>
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <ClockIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                                        <span className="text-sm text-gray-500 dark:text-gray-400">18 hrs</span>
+                            <CardHeader>
+                                <CardTitle>Suggested Resources</CardTitle>
+                                <CardDescription>Personalized suggestions for blogs, cheat sheets, courses, and tutorials.</CardDescription>
+                            </CardHeader>
+                            <CardContent>
+                                <div className="grid gap-4 text-sm">
+                                    <div className="flex items-start gap-4">
+                                        <div className="rounded-lg w-10 h-10 bg-[#55efc4] text-2xl flex items-center justify-center">
+                                            📚
+                                        </div>
+                                        <div className="grid gap-1">
+                                            <div className="font-medium">React Cheat Sheet</div>
+                                            <div className="text-gray-500 dark:text-gray-400">
+                                                A comprehensive cheat sheet for React developers.
+                                            </div>
+                                        </div>
                                     </div>
-                                    <Button size="sm">Enroll</Button>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <Avatar className="m-2 " >
-                                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                            <CardContent className="space-y-2 p-4">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                                    Data Science
-                                </div>
-                                <h3 className="text-lg font-semibold">Hands-on Machine Learning with Python</h3>
-                                <p className="text-gray-500 dark:text-gray-400">
-                                    Explore the world of machine learning and build intelligent applications.
-                                </p>
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <ClockIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                                        <span className="text-sm text-gray-500 dark:text-gray-400">25 hrs</span>
+                                    <div className="flex items-start gap-4">
+                                        <div className="rounded-lg w-10 h-10 bg-[#ffeaa7] text-2xl flex items-center justify-center">
+                                            🎥
+                                        </div>
+                                        <div className="grid gap-1">
+                                            <div className="font-medium">React Fundamentals Course</div>
+                                            <div className="text-gray-500 dark:text-gray-400">
+                                                A beginner-friendly course to master the basics of React.
+                                            </div>
+                                        </div>
                                     </div>
-                                    <Button size="sm">Enroll</Button>
-                                </div>
-                            </CardContent>
-                        </Card>
-                        <Card>
-                            <Avatar className="m-2 " >
-                                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
-                                <AvatarFallback>CN</AvatarFallback>
-                            </Avatar>
-                            <CardContent className="space-y-2 p-4">
-                                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">Marketing</div>
-                                <h3 className="text-lg font-semibold">Mastering Google Ads: From Beginner to Expert</h3>
-                                <p className="text-gray-500 dark:text-gray-400">
-                                    Unlock the power of Google Ads and drive growth for your business.
-                                </p>
-                                <div className="flex items-center justify-between">
-                                    <div className="flex items-center gap-2">
-                                        <ClockIcon className="h-4 w-4 text-gray-500 dark:text-gray-400" />
-                                        <span className="text-sm text-gray-500 dark:text-gray-400">22 hrs</span>
+                                    <div className="flex items-start gap-4">
+                                        <div className="rounded-lg w-10 h-10 bg-[#fdcb6e] text-2xl flex items-center justify-center">
+                                            📝
+                                        </div>
+                                        <div className="grid gap-1">
+                                            <div className="font-medium">JavaScript Best Practices</div>
+                                            <div className="text-gray-500 dark:text-gray-400">
+                                                A blog post on essential JavaScript best practices.
+                                            </div>
+                                        </div>
                                     </div>
-                                    <Button size="sm">Enroll</Button>
                                 </div>
                             </CardContent>
                         </Card>
                     </div>
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Feedback and Suggestions</CardTitle>
+                            <CardDescription>Let us know how we can improve your learning experience.</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <form className="grid gap-4">
+                                <div className="space-y-1">
+                                    <Label htmlFor="feedback">Feedback</Label>
+                                    <Textarea id="feedback" rows={3} placeholder="Share your thoughts..." />
+                                </div>
+                                <div className="space-y-1">
+                                    <Label htmlFor="suggestion">Suggestion</Label>
+                                    <Textarea id="suggestion" rows={3} placeholder="What would you like to see?" />
+                                </div>
+                                <Button type="submit" className="justify-self-end">
+                                    Submit
+                                </Button>
+                            </form>
+                        </CardContent>
+                    </Card>
                 </div>
             </section>
         </main>
     )
 }
 
-function ClockIcon(props) {
+function LineChart(props) {
     return (
-        <svg
-            {...props}
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-        >
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
-        </svg>
+        <div {...props}>
+            <ResponsiveLine
+                data={[
+                    {
+                        id: "Desktop",
+                        data: [
+                            { x: "Jan", y: 43 },
+                            { x: "Feb", y: 137 },
+                            { x: "Mar", y: 61 },
+                            { x: "Apr", y: 145 },
+                            { x: "May", y: 26 },
+                            { x: "Jun", y: 154 },
+                        ],
+                    },
+                    {
+                        id: "Mobile",
+                        data: [
+                            { x: "Jan", y: 60 },
+                            { x: "Feb", y: 48 },
+                            { x: "Mar", y: 177 },
+                            { x: "Apr", y: 78 },
+                            { x: "May", y: 96 },
+                            { x: "Jun", y: 204 },
+                        ],
+                    },
+                ]}
+                margin={{ top: 10, right: 10, bottom: 40, left: 40 }}
+                xScale={{
+                    type: "point",
+                }}
+                yScale={{
+                    type: "linear",
+                }}
+                axisTop={null}
+                axisRight={null}
+                axisBottom={{
+                    tickSize: 0,
+                    tickPadding: 16,
+                }}
+                axisLeft={{
+                    tickSize: 0,
+                    tickValues: 5,
+                    tickPadding: 16,
+                }}
+                colors={["#2563eb", "#e11d48"]}
+                pointSize={6}
+                useMesh={true}
+                gridYValues={6}
+                theme={{
+                    tooltip: {
+                        chip: {
+                            borderRadius: "9999px",
+                        },
+                        container: {
+                            fontSize: "12px",
+                            textTransform: "capitalize",
+                            borderRadius: "6px",
+                        },
+                    },
+                    grid: {
+                        line: {
+                            stroke: "#f3f4f6",
+                        },
+                    },
+                }}
+                role="application"
+            />
+        </div>
     )
 }
