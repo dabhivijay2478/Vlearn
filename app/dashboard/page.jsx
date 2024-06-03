@@ -2,42 +2,42 @@
 import { Button } from "@/components/ui/button"
 import { Player } from '@lottiefiles/react-lottie-player';
 import welcomeanimation from "../../animations/lottie/welcome.json";
-
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { ResponsiveLine } from "@nivo/line"
-
+import { ResponsivePie } from '@nivo/pie'
 import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
 
 export default function Dashboard() {
     const Welcome = `Welcome back, John!`;
-    const words = ` Dive into your personalized learning journey and explore new courses to expand your knowledge.`;
+    const words = `Dive into your personalized learning journey and explore new courses to expand your knowledge.`;
+
     return (
         <main className="flex flex-col gap-12 py-12 md:py-16 lg:py-20">
-            <section className="container px-4 md:px-6">
-                <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_550px]">
-                    <div className="flex flex-col justify-center space-y-4">
-                        <div className="space-y-2">
-                            <div>
-                                <TextGenerateEffect words={Welcome} className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none" />
-                            </div>
-                            <div>
-                                <TextGenerateEffect words={words} className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400" />
-                            </div>
+            <div className="grid gap-6 lg:grid-cols-1 xl:grid-cols-2 lg:gap-12 xl:gap-16 container px-4 md:px-6">
+                <div className="flex flex-col justify-center space-y-4">
+                    <div className="space-y-2">
+                        <div>
+                            <TextGenerateEffect words={Welcome} className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none" />
+                        </div>
+                        <div>
+                            <TextGenerateEffect words={words} className="max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400" />
                         </div>
                     </div>
+                </div>
+                <div className="flex justify-center items-center">
                     <Player
                         src={welcomeanimation}
-                        className="w-72 h-72 md:w-96 md:h-96"
+                        className="player w-72 h-72"
                         loop
                         autoplay
                     />
                 </div>
-            </section>
-            <section className="container mx-auto px-4 md:px-6 flex min-h-[calc(100vh_-_theme(spacing.16))] ">
-                <div className="max-w-7xl w-full mx-auto grid gap-6">
-                    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+            </div>
+
+            <div className="flex min-h-[calc(100vh - var(--theme-spacing-16))] flex-1 flex-col gap-2 container px-4 md:px-6">
+                <div className="max-w-8xl w-full mx-auto grid gap-6">
+                    <div className="grid gap-6 lg:grid-cols-1 xl:grid-cols-2">
                         <Card>
                             <CardHeader>
                                 <CardTitle>Weekly Learning Graph</CardTitle>
@@ -46,7 +46,7 @@ export default function Dashboard() {
                                 </CardDescription>
                             </CardHeader>
                             <CardContent>
-                                <LineChart className="aspect-[9/4]" />
+                                <PieChart className="aspect-square" />
                             </CardContent>
                         </Card>
                         <Card>
@@ -56,41 +56,20 @@ export default function Dashboard() {
                             </CardHeader>
                             <CardContent>
                                 <div className="grid gap-4 text-sm">
-                                    <div className="flex items-center justify-between">
-                                        <div>JavaScript</div>
-                                        <div className="font-medium">
-                                            <span className="text-gray-500 dark:text-gray-400 mr-1">1,234</span> visits
+                                    {["JavaScript", "React", "Python", "TypeScript", "Vue.js"].map((tech, index) => (
+                                        <div className="flex items-center justify-between" key={index}>
+                                            <div>{tech}</div>
+                                            <div className="font-medium">
+                                                <span className="text-gray-500 dark:text-gray-400 mr-1">{index * 234 + 543}</span>
+                                                visits
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                        <div>React</div>
-                                        <div className="font-medium">
-                                            <span className="text-gray-500 dark:text-gray-400 mr-1">987</span> visits
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                        <div>Python</div>
-                                        <div className="font-medium">
-                                            <span className="text-gray-500 dark:text-gray-400 mr-1">789</span> visits
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                        <div>TypeScript</div>
-                                        <div className="font-medium">
-                                            <span className="text-gray-500 dark:text-gray-400 mr-1">654</span> visits
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center justify-between">
-                                        <div>Vue.js</div>
-                                        <div className="font-medium">
-                                            <span className="text-gray-500 dark:text-gray-400 mr-1">543</span> visits
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </CardContent>
                         </Card>
                     </div>
-                    <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+                    <div className="grid gap-6 lg:grid-cols-1 xl:grid-cols-2">
                         <Card>
                             <CardHeader>
                                 <CardTitle>Login Tracking</CardTitle>
@@ -107,13 +86,15 @@ export default function Dashboard() {
                                     <div className="flex items-center justify-between">
                                         <div>Login Streak</div>
                                         <div className="font-medium">
-                                            <span className="text-gray-500 dark:text-gray-400 mr-1">7</span> days
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">7</span>
+                                            days
                                         </div>
                                     </div>
                                     <div className="flex items-center justify-between">
                                         <div>Avg. Session Duration</div>
                                         <div className="font-medium">
-                                            <span className="text-gray-500 dark:text-gray-400 mr-1">45</span> minutes
+                                            <span className="text-gray-500 dark:text-gray-400 mr-1">45</span>
+                                            minutes
                                         </div>
                                     </div>
                                 </div>
@@ -122,43 +103,27 @@ export default function Dashboard() {
                         <Card>
                             <CardHeader>
                                 <CardTitle>Suggested Resources</CardTitle>
-                                <CardDescription>Personalized suggestions for blogs, cheat sheets, courses, and tutorials.</CardDescription>
+                                <CardDescription>
+                                    Personalized suggestions for blogs, cheat sheets, courses, and tutorials.
+                                </CardDescription>
                             </CardHeader>
                             <CardContent>
                                 <div className="grid gap-4 text-sm">
-                                    <div className="flex items-start gap-4">
-                                        <div className="rounded-lg w-10 h-10 bg-[#55efc4] text-2xl flex items-center justify-center">
-                                            📚
-                                        </div>
-                                        <div className="grid gap-1">
-                                            <div className="font-medium">React Cheat Sheet</div>
-                                            <div className="text-gray-500 dark:text-gray-400">
-                                                A comprehensive cheat sheet for React developers.
+                                    {[
+                                        { icon: "📚", title: "React Cheat Sheet", description: "A comprehensive cheat sheet for React developers." },
+                                        { icon: "🎥", title: "React Fundamentals Course", description: "A beginner-friendly course to master the basics of React." },
+                                        { icon: "📝", title: "JavaScript Best Practices", description: "A blog post on essential JavaScript best practices." }
+                                    ].map((resource, index) => (
+                                        <div className="flex items-start gap-4" key={index}>
+                                            <div className={`rounded-lg w-10 h-10 text-2xl flex items-center justify-center ${index === 0 ? 'bg-[#55efc4]' : index === 1 ? 'bg-[#ffeaa7]' : 'bg-[#fdcb6e]'}`}>
+                                                {resource.icon}
+                                            </div>
+                                            <div className="grid gap-1">
+                                                <div className="font-medium">{resource.title}</div>
+                                                <div className="text-gray-500 dark:text-gray-400">{resource.description}</div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="rounded-lg w-10 h-10 bg-[#ffeaa7] text-2xl flex items-center justify-center">
-                                            🎥
-                                        </div>
-                                        <div className="grid gap-1">
-                                            <div className="font-medium">React Fundamentals Course</div>
-                                            <div className="text-gray-500 dark:text-gray-400">
-                                                A beginner-friendly course to master the basics of React.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-start gap-4">
-                                        <div className="rounded-lg w-10 h-10 bg-[#fdcb6e] text-2xl flex items-center justify-center">
-                                            📝
-                                        </div>
-                                        <div className="grid gap-1">
-                                            <div className="font-medium">JavaScript Best Practices</div>
-                                            <div className="text-gray-500 dark:text-gray-400">
-                                                A blog post on essential JavaScript best practices.
-                                            </div>
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
                             </CardContent>
                         </Card>
@@ -185,80 +150,148 @@ export default function Dashboard() {
                         </CardContent>
                     </Card>
                 </div>
-            </section>
+            </div>
         </main>
-    )
+    );
 }
 
-function LineChart(props) {
+const data = [
+    {
+        "id": "elixir",
+        "label": "elixir",
+        "value": 160,
+        "color": "hsl(50, 70%, 50%)"
+    },
+    {
+        "id": "stylus",
+        "label": "stylus",
+        "value": 524,
+        "color": "hsl(10, 70%, 50%)"
+    },
+    {
+        "id": "erlang",
+        "label": "erlang",
+        "value": 450,
+        "color": "hsl(19, 70%, 50%)"
+    },
+    {
+        "id": "lisp",
+        "label": "lisp",
+        "value": 101,
+        "color": "hsl(85, 70%, 50%)"
+    },
+    {
+        "id": "haskell",
+        "label": "haskell",
+        "value": 385,
+        "color": "hsl(167, 70%, 50%)"
+    }
+];
+
+function PieChart(props) {
     return (
         <div {...props}>
-            <ResponsiveLine
-                data={[
+            <ResponsivePie
+                data={data}
+                margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+                innerRadius={0.5}
+                padAngle={0.7}
+                cornerRadius={3}
+                activeOuterRadiusOffset={8}
+                borderWidth={1}
+                borderColor={{
+                    from: 'color',
+                    modifiers: [['darker', 0.2]]
+                }}
+                arcLinkLabelsSkipAngle={10}
+                arcLinkLabelsTextColor="#333333"
+                arcLinkLabelsThickness={2}
+                arcLinkLabelsColor={{ from: 'color' }}
+                arcLabelsSkipAngle={10}
+                arcLabelsTextColor={{
+                    from: 'color',
+                    modifiers: [['darker', 2]]
+                }}
+                defs={[
                     {
-                        id: "Desktop",
-                        data: [
-                            { x: "Jan", y: 43 },
-                            { x: "Feb", y: 137 },
-                            { x: "Mar", y: 61 },
-                            { x: "Apr", y: 145 },
-                            { x: "May", y: 26 },
-                            { x: "Jun", y: 154 },
-                        ],
+                        id: 'dots',
+                        type: 'patternDots',
+                        background: 'inherit',
+                        color: 'rgba(255, 255, 255, 0.3)',
+                        size: 4,
+                        padding: 1,
+                        stagger: true
                     },
                     {
-                        id: "Mobile",
-                        data: [
-                            { x: "Jan", y: 60 },
-                            { x: "Feb", y: 48 },
-                            { x: "Mar", y: 177 },
-                            { x: "Apr", y: 78 },
-                            { x: "May", y: 96 },
-                            { x: "Jun", y: 204 },
-                        ],
-                    },
+                        id: 'lines',
+                        type: 'patternLines',
+                        background: 'inherit',
+                        color: 'rgba(255, 255, 255, 0.3)',
+                        rotation: -45,
+                        lineWidth: 6,
+                        spacing: 10
+                    }
                 ]}
-                margin={{ top: 10, right: 10, bottom: 40, left: 40 }}
-                xScale={{
-                    type: "point",
-                }}
-                yScale={{
-                    type: "linear",
-                }}
-                axisTop={null}
-                axisRight={null}
-                axisBottom={{
-                    tickSize: 0,
-                    tickPadding: 16,
-                }}
-                axisLeft={{
-                    tickSize: 0,
-                    tickValues: 5,
-                    tickPadding: 16,
-                }}
-                colors={["#2563eb", "#e11d48"]}
-                pointSize={6}
-                useMesh={true}
-                gridYValues={6}
-                theme={{
-                    tooltip: {
-                        chip: {
-                            borderRadius: "9999px",
-                        },
-                        container: {
-                            fontSize: "12px",
-                            textTransform: "capitalize",
-                            borderRadius: "6px",
-                        },
+                fill={[
+                    {
+                        match: { id: 'ruby' },
+                        id: 'dots'
                     },
-                    grid: {
-                        line: {
-                            stroke: "#f3f4f6",
-                        },
+                    {
+                        match: { id: 'c' },
+                        id: 'dots'
                     },
-                }}
-                role="application"
+                    {
+                        match: { id: 'go' },
+                        id: 'dots'
+                    },
+                    {
+                        match: { id: 'python' },
+                        id: 'dots'
+                    },
+                    {
+                        match: { id: 'scala' },
+                        id: 'lines'
+                    },
+                    {
+                        match: { id: 'lisp' },
+                        id: 'lines'
+                    },
+                    {
+                        match: { id: 'elixir' },
+                        id: 'lines'
+                    },
+                    {
+                        match: { id: 'javascript' },
+                        id: 'lines'
+                    }
+                ]}
+                legends={[
+                    {
+                        anchor: 'bottom',
+                        direction: 'row',
+                        justify: false,
+                        translateX: 0,
+                        translateY: 56,
+                        itemsSpacing: 0,
+                        itemWidth: 100,
+                        itemHeight: 18,
+                        itemTextColor: '#999',
+                        itemDirection: 'left-to-right',
+                        itemOpacity: 1,
+                        symbolSize: 18,
+                        symbolShape: 'circle',
+                        effects: [
+                            {
+                                on: 'hover',
+                                style: {
+                                    itemTextColor: '#000'
+                                }
+                            }
+                        ]
+                    }
+                ]}
             />
         </div>
-    )
+    );
 }
