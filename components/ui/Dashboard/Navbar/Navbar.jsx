@@ -111,6 +111,13 @@ export default function Navbar() {
                             <Link2 className="h-5 w-5" />
                             Blogs and YouTube Links
                         </Link>
+                        <Link
+                            href="/dashboard/ai-mentor"
+                            className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+                        >
+                            <ChatBubbleIcon className="h-5 w-5" />
+                            <span className="sr-only">AI Mentor</span>
+                        </Link>
                     </nav>
                 </SheetContent>
             </Sheet>
@@ -156,13 +163,13 @@ export default function Navbar() {
                             Settings
                         </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>  
+                    <DropdownMenuItem>
                         <Link
-                        href="/dashboard/support"
-                        className=" rounded-lg  transition-colors hover:text-foreground cursor-pointer"
-                    >
-                        Support
-                    </Link></DropdownMenuItem>
+                            href="/dashboard/support"
+                            className=" rounded-lg  transition-colors hover:text-foreground cursor-pointer"
+                        >
+                            Support
+                        </Link></DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>Logout</DropdownMenuItem>
                 </DropdownMenuContent>
