@@ -1,19 +1,6 @@
+'use client'
 
-import {
-    File,
-    ListFilter,
-    PlusCircle,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import {
-    DropdownMenu,
-    DropdownMenuCheckboxItem,
-    DropdownMenuContent,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-
+import Link from "next/link"
 
 export default function CheatSheet() {
     return (
@@ -23,56 +10,21 @@ export default function CheatSheet() {
             <div>
                 <section className="py-12 md:py-16 lg:py-20">
                     <div className="container px-4 md:px-6">
-                        <div className="mb-8 text-center">
-                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Cheat Sheet</h2>
-                            <div className="ml-auto flex items-start gap-2">
-                                <DropdownMenu>
-                                    <DropdownMenuTrigger asChild>
-                                        <Button variant="outline" size="sm" className="h-7 gap-1">
-                                            <ListFilter className="h-3.5 w-3.5" />
-                                            <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                                                Filter
-                                            </span>
-                                        </Button>
-                                    </DropdownMenuTrigger>
-                                    <DropdownMenuContent align="end">
-                                        <DropdownMenuLabel>Filter by</DropdownMenuLabel>
-                                        <DropdownMenuSeparator />
-                                        <DropdownMenuCheckboxItem checked>
-                                            Active
-                                        </DropdownMenuCheckboxItem>
-                                        <DropdownMenuCheckboxItem>Draft</DropdownMenuCheckboxItem>
-                                        <DropdownMenuCheckboxItem>
-                                            Archived
-                                        </DropdownMenuCheckboxItem>
-                                    </DropdownMenuContent>
-                                </DropdownMenu>
-                                <Button size="sm" variant="outline" className="h-7 gap-1">
-                                    <File className="h-3.5 w-3.5" />
-                                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                                        Export
-                                    </span>
-                                </Button>
-                                <Button size="sm" className="h-7 gap-1">
-                                    <PlusCircle className="h-3.5 w-3.5" />
-                                    <span className="sr-only sm:not-sr-only sm:whitespace-nowrap">
-                                        Add Product
-                                    </span>
-                                </Button>
-                            </div>
-                        </div>
+
 
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
                             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
-                                <div className="flex items-center gap-4">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
-                                        <LinkIcon className="h-6 w-6" />
+                                <Link href="/dashboard/cheatsheet/Cheatsheet-Details">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
+                                            <LinkIcon className="h-6 w-6" />
+                                        </div>
+                                        <div>
+                                            <h3 className="text-lg font-semibold">HTML</h3>
+                                            <p className="text-sm text-gray-500 dark:text-gray-400">Hypertext Markup Language</p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="text-lg font-semibold">HTML</h3>
-                                        <p className="text-sm text-gray-500 dark:text-gray-400">Hypertext Markup Language</p>
-                                    </div>
-                                </div>
+                                </Link>
                             </div>
                             <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
                                 <div className="flex items-center gap-4">

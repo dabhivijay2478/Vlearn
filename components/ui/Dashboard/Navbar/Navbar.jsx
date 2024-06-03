@@ -35,6 +35,10 @@ import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import Logo from "../../../../public/logo.png"
+
+
+
+
 export default function Navbar() {
     const pathname = usePathname();
     const generateBreadcrumbItems = () => {
