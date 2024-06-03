@@ -21,6 +21,7 @@ import {
     BreadcrumbList,
     BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import { ChatBubbleIcon, DashboardIcon, HomeIcon } from "@radix-ui/react-icons"
 import { Button } from "@/components/ui/button";
 import {
     DropdownMenu,
@@ -111,6 +112,13 @@ export default function Navbar() {
                             <Link2 className="h-5 w-5" />
                             Blogs and YouTube Links
                         </Link>
+                        <Link
+                            href="/dashboard/ai-mentor"
+                            className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                        >
+                            <ChatBubbleIcon className="h-5 w-5" />
+                            AI Mentor
+                        </Link>
                     </nav>
                 </SheetContent>
             </Sheet>
@@ -156,13 +164,13 @@ export default function Navbar() {
                             Settings
                         </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem>  
+                    <DropdownMenuItem>
                         <Link
-                        href="/dashboard/support"
-                        className=" rounded-lg  transition-colors hover:text-foreground cursor-pointer"
-                    >
-                        Support
-                    </Link></DropdownMenuItem>
+                            href="/dashboard/support"
+                            className=" rounded-lg  transition-colors hover:text-foreground cursor-pointer"
+                        >
+                            Support
+                        </Link></DropdownMenuItem>
                     <DropdownMenuSeparator />
                     <DropdownMenuItem>Logout</DropdownMenuItem>
                 </DropdownMenuContent>
