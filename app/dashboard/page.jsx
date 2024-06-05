@@ -1,12 +1,11 @@
 'use client'
-import { Button } from "@/components/ui/button"
 import { Player } from '@lottiefiles/react-lottie-player';
 import welcomeanimation from "../../animations/lottie/welcome.json";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
+
 import { ResponsivePie } from '@nivo/pie'
 import { TextGenerateEffect } from "../../components/ui/text-generate-effect";
+import FeedBack from '@/components/FeedBack';
 
 export default function Dashboard() {
     const Welcome = `Welcome back, John!`;
@@ -128,27 +127,7 @@ export default function Dashboard() {
                             </CardContent>
                         </Card>
                     </div>
-                    <Card>
-                        <CardHeader>
-                            <CardTitle>Feedback and Suggestions</CardTitle>
-                            <CardDescription>Let us know how we can improve your learning experience.</CardDescription>
-                        </CardHeader>
-                        <CardContent>
-                            <form className="grid gap-4">
-                                <div className="space-y-1">
-                                    <Label htmlFor="feedback">Feedback</Label>
-                                    <Textarea id="feedback" rows={3} placeholder="Share your thoughts..." />
-                                </div>
-                                <div className="space-y-1">
-                                    <Label htmlFor="suggestion">Suggestion</Label>
-                                    <Textarea id="suggestion" rows={3} placeholder="What would you like to see?" />
-                                </div>
-                                <Button type="submit" className="justify-self-end">
-                                    Submit
-                                </Button>
-                            </form>
-                        </CardContent>
-                    </Card>
+                    <FeedBack />
                 </div>
             </div>
         </main>

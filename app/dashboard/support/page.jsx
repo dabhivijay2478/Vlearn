@@ -5,6 +5,7 @@
  */
 import { Input } from "@/components/ui/input"
 import { CollapsibleTrigger, CollapsibleContent, Collapsible } from "@/components/ui/collapsible"
+import FeedBack from "@/components/FeedBack"
 
 export default function Support() {
     return (
@@ -213,6 +214,8 @@ export default function Support() {
                                     </div>
                                 </CollapsibleContent>
                             </Collapsible>
+                            <FeedBack />
+
                         </div>
                     </div>
                 </div>

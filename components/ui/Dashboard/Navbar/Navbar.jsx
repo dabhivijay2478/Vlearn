@@ -35,6 +35,10 @@ import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import Logo from "../../../../public/logo.png"
+
+
+
+
 export default function Navbar() {
     const pathname = usePathname();
     const generateBreadcrumbItems = () => {
@@ -133,7 +137,7 @@ export default function Navbar() {
                 <Input
                     type="search"
                     placeholder="Search..."
-                    className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[320px]"
+                    className="w-full rounded-lg  bg-slate-900 pl-8 md:w-[200px] lg:w-[320px]  border border-gray-200  px-12 py-3 shadow-sm focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 dark:border-gray-700 dark:bg-gray-950 dark:focus:border-gray-600 dark:focus:ring-gray-600"
                 />
             </div>
             <DropdownMenu>
@@ -170,9 +174,18 @@ export default function Navbar() {
                             className=" rounded-lg  transition-colors hover:text-foreground cursor-pointer"
                         >
                             Support
-                        </Link></DropdownMenuItem>
+                        </Link>
+
+                    </DropdownMenuItem>
                     <DropdownMenuSeparator />
-                    <DropdownMenuItem>Logout</DropdownMenuItem>
+                    <DropdownMenuItem >
+                        <Link
+                            href="/"
+                            className=" rounded-lg  transition-colors hover:text-foreground cursor-pointer"
+                        >
+                            Logout
+                        </Link>
+                    </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
         </header>

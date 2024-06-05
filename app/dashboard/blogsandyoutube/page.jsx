@@ -7,7 +7,7 @@ import Logo from "../../../public/logo.png"
 export default function blogsandyoutube() {
     return (
         <div className="">
-            <header className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
+            <div className="container mx-auto px-4 py-8 md:py-12 lg:py-16">
                 <div className="mx-auto max-w-4xl text-center">
                     <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
                         Discover the Best Software Engineering Content
@@ -15,11 +15,17 @@ export default function blogsandyoutube() {
                     <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
                         Explore a curated collection of the top software engineering blogs and YouTube channels.
                     </p>
-                    <div className="mt-6">
-                        <Input className="w-full max-w-md" placeholder="Search for topics, authors, or channels" />
+                    <div className="relative mt-6">
+                        <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 dark:text-gray-400" />
+                        <Input
+                            className="w-full rounded-md border border-gray-200 bg-white px-12 py-3 shadow-sm focus:border-gray-400 focus:outline-none focus:ring-1 focus:ring-gray-400 dark:border-gray-700 dark:bg-gray-950 dark:focus:border-gray-600 dark:focus:ring-gray-600"
+                            placeholder="Search our help center"
+                            type="search"
+                        />
                     </div>
                 </div>
-            </header>
+
+            </div>
             <main className="container mx-auto grid grid-cols-1 gap-8 px-4 pb-12 md:grid-cols-2 lg:grid-cols-3">
                 <div className="col-span-1 lg:col-span-1">
                     <div className="sticky top-4 space-y-4">
@@ -224,6 +230,27 @@ function ChevronRightIcon(props) {
             strokeLinejoin="round"
         >
             <path d="m9 18 6-6-6-6" />
+        </svg>
+    )
+}
+
+
+function SearchIcon(props) {
+    return (
+        <svg
+            {...props}
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+        >
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.3-4.3" />
         </svg>
     )
 }
