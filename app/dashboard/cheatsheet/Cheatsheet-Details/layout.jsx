@@ -10,12 +10,8 @@ export default function CheatshhetDetailsLayout({ children }) {
         <div className="flex min-h-screen">
             <Sidebarcheatsheet />
             <div className="flex-1 overflow-y-auto p-6">
-
                 <Navbarcheatsheet />
-
-
                 {children}
-
             </div>
         </div>
 

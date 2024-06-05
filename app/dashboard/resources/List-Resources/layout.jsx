@@ -12,6 +12,7 @@ export default function ListResourcesLayout({ children }) {
                 <ResourcesSideBar />
                 <div>
                     <div className="grid grid-cols-1 gap-8 pt-6 sm:grid-cols-2">
+                        <ResourceNavbar />  
                         {children}
                     </div>
                 </div>

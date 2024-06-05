@@ -16,7 +16,7 @@ export default function Sidebarcheatsheet() {
                             className="block text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"
                             prefetch={false}
                         >
-                            Reactsadad
+                            Reacts
                         </Link>
                         <Link
                             href="#"
@@ -60,9 +60,7 @@ export default function Sidebarcheatsheet() {
                         >
                             C++
                         </Link>
-                    </div>
-                    <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400">Programming Languages</h3>
-                    <div className="space-y-2">
+                   
                         <Link
                             href="#"
                             className="block text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"

@@ -13,7 +13,7 @@ export default function CheatSheet() {
 
 
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <Link href="/dashboard/cheatsheet/Cheatsheet-Details">
                                     <div className="flex items-center gap-4">
                                         <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
@@ -26,7 +26,7 @@ export default function CheatSheet() {
                                     </div>
                                 </Link>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                                         <ChromeIcon className="h-6 w-6" />
@@ -37,7 +37,7 @@ export default function CheatSheet() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                                         <CodepenIcon className="h-6 w-6" />
@@ -48,7 +48,7 @@ export default function CheatSheet() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                                         <ComponentIcon className="h-6 w-6" />
@@ -59,7 +59,7 @@ export default function CheatSheet() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                                         <ViewIcon className="h-6 w-6" />
@@ -70,7 +70,7 @@ export default function CheatSheet() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                                         <AngryIcon className="h-6 w-6" />
@@ -81,7 +81,7 @@ export default function CheatSheet() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                                         <CodepenIcon className="h-6 w-6" />
@@ -92,7 +92,7 @@ export default function CheatSheet() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                                         <PyramidIcon className="h-6 w-6" />
@@ -103,7 +103,7 @@ export default function CheatSheet() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                                         <RocketIcon className="h-6 w-6" />
@@ -114,7 +114,7 @@ export default function CheatSheet() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-950">
+                            <div className="border border-purple-500 bg-white p-6    dark:border-purple-500 dark:bg-gray-950 relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2">
                                 <div className="flex items-center gap-4">
                                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800">
                                         <ShellIcon className="h-6 w-6" />

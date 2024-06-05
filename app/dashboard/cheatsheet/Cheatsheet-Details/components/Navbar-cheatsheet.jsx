@@ -17,7 +17,6 @@ export default function Navbarcheatsheet() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start" className="w-full">
                     <DropdownMenuItem>
-                        <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400">Technologies</h3>
                         <div className="space-y-2 mt-2">
                             <Link
                                 href="#"
@@ -68,12 +67,7 @@ export default function Navbarcheatsheet() {
                             >
                                 C++
                             </Link>
-                        </div>
-                    </DropdownMenuItem>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem>
-                        <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400">Programming Languages</h3>
-                        <div className="space-y-2 mt-2">
+
                             <Link
                                 href="#"
                                 className="block text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-50"

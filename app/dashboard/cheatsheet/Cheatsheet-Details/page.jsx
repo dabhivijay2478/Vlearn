@@ -2,7 +2,8 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card"
 import { ScrollArea } from "@/components/ui/scroll-area"
-
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { monokai } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 export default function Component() {
     return (
         <ScrollArea className="h-[700px] w-auto rounded-md border p-4">
@@ -14,9 +15,12 @@ export default function Component() {
                             A comprehensive cheat sheet for React, covering essential concepts and syntax.
                         </CardDescription>
                     </CardHeader>
-                    <CardContent>
-                        <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
-                            <code>{`import React from 'react';
+                    <CardContent className='rounded-lg'>
+                        {/* <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto"> */}
+                        <SyntaxHighlighter language="javascript" style={monokai} wrapLines={true} lineProps={{ style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' } }}>
+
+
+                            {`import React from 'react';
 
 function MyComponent() {
   return (
@@ -25,8 +29,9 @@ function MyComponent() {
       <p>This is a React component.</p>
     </div>
   );
-}`}</code>
-                        </pre>
+}`}
+                        </SyntaxHighlighter>
+                        {/* </pre> */}
                     </CardContent>
                     <CardFooter className="flex items-center justify-between">
                         <Button
@@ -67,14 +72,12 @@ function MyComponent() {
                         </CardDescription>
                     </CardHeader>
                     <CardContent>
-                        <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md overflow-x-auto">
-                            <code>{`function greet(name) {
+                        <SyntaxHighlighter language="javascript" style={monokai} wrapLines={true} lineProps={{ style: { wordBreak: 'break-all', whiteSpace: 'pre-wrap' } }}>{`function greet(name) {
   console.log('Hello, ' + name + '!');
 }
 
 greet('Alice');
-`}</code>
-                        </pre>
+`} </SyntaxHighlighter>
                     </CardContent>
                     <CardFooter className="flex items-center justify-between">
                         <Button
@@ -184,7 +187,7 @@ print(square(5))`)
                     </CardFooter>
                 </Card>
             </div>
-        </ScrollArea>
+        </ScrollArea >
 
     )
 }
