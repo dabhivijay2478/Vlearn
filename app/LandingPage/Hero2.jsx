@@ -38,7 +38,7 @@ export default function Hero2() {
                             </p>
                             <Link
                                 className="inline-flex h-10 items-center justify-center rounded-md bg-gray-50 px-6 text-sm font-medium text-gray-950 transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950"
-                                href="#"
+                                href="/login"
                             >
                                 Explore Resources
                             </Link>

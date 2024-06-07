@@ -62,7 +62,7 @@ export default function Hero3() {
                     className="mt-2 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-2 gap-0 mr-5"
                 >
                     <CardContainer className="inter-var">
-                        <CardBody className="bg-slate-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+                        <CardBody className="bg-slate-950 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
                             <motion.div variants={itemVariants}>
                                 <CardItem
                                     translateZ="50"
@@ -107,13 +107,14 @@ export default function Hero3() {
                                 </CardItem>
                                 <div className="flex justify-between items-center mt-20">
                                     <Link
-                                        className="inline-flex h-10 items-center justify-center rounded-md bg-cyan-700 px-6 text-sm font-medium text-gray-950 transition-colors hover:bg-purple-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950"
+                                        className="inline-flex h-10 items-center justify-center rounded-md bg-white  dark:bg-purple-500 px-6 text-sm font-medium text-gray-950 transition-colors hover:bg-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950"
+
                                         href="#"
                                     >
                                         <CardItem
                                             translateZ={20}
                                             as="button"
-                                            className="px-4 py-2 rounded-xl dark:text-black text-white text-xs font-bold"
+                                            className="px-4 py-2 rounded-xl dark:text-black text-slate-950 hover:text-white text-xs font-bold"
                                         >
                                             Get Started
                                         </CardItem>
@@ -123,7 +124,7 @@ export default function Hero3() {
                         </CardBody>
                     </CardContainer>
                     <CardContainer className="inter-var">
-                        <CardBody className="bg-slate-900 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
+                        <CardBody className="bg-slate-950 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
                             <motion.div variants={itemVariants}>
                                 <CardItem
                                     translateZ="50"
@@ -168,13 +169,13 @@ export default function Hero3() {
                                 </CardItem>
                                 <div className="flex justify-between items-center mt-20">
                                     <Link
-                                        className="inline-flex h-10 items-center justify-center rounded-md bg-cyan-700 px-6 text-sm font-medium text-gray-950 transition-colors hover:bg-purple-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950"
+                                        className="inline-flex h-10 items-center justify-center rounded-md bg-white  dark:bg-purple-500 px-6 text-sm font-medium text-gray-950 transition-colors hover:bg-purple-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950"
                                         href="#"
                                     >
                                         <CardItem
                                             translateZ={20}
                                             as="button"
-                                            className="px-4 py-2 rounded-xl dark:text-black text-white text-xs font-bold"
+                                            className="px-4 py-2 rounded-xl dark:text-black text-slate-950 hover:text-white text-xs font-bold"
                                         >
                                             Get Started
                                         </CardItem>

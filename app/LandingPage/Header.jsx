@@ -54,7 +54,7 @@ export default function Header() {
                     <ThemeToggle />
                     <motion.div variants={linkVariants} whileHover="hover">
                         <Link
-                            className="inline-flex h-9 items-center justify-center rounded-md bg-gray-800 px-4 text-sm font-medium transition-colors hover:bg-gray-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950"
+                            className="inline-flex h-9 items-center justify-center rounded-md bg-gray-50 px-4 text-sm font-medium text-gray-950 transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 dark:bg-purple-500"
                             href="/login"
                         >
                             Log in
@@ -62,7 +62,7 @@ export default function Header() {
                     </motion.div>
                     <motion.div variants={linkVariants} whileHover="hover">
                         <Link
-                            className="inline-flex h-9 items-center justify-center rounded-md bg-gray-50 px-4 text-sm font-medium text-gray-950 transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950"
+                            className="inline-flex h-9 items-center justify-center rounded-md bg-gray-50 px-4 text-sm font-medium text-gray-950 transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 dark:bg-purple-500"
                             href="/signup"
                         >
                             Sign up

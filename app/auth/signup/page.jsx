@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Player } from '@lottiefiles/react-lottie-player';
 
-import animationURL from "../../animations/lottie/ThinkCoding";
+import animationURL from "@/animations/lottie/ThinkCoding";
 import {
     IconBrandGithub,
     IconBrandGoogle,
@@ -85,7 +85,7 @@ export default function SignupFrom() {
                     </div>
                     <div className="mt-4 text-center text-sm">
                         You Already have an account?{" "}
-                        <Link href="/login" className="underline">
+                        <Link href="/auth/login" className="underline">
                             Login
                         </Link>
                     </div>

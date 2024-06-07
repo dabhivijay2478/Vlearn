@@ -44,14 +44,14 @@ export default function GetStarted() {
                             variants={itemVariants}
                         >
                             <Link
-                                className="inline-flex h-10 items-center justify-center rounded-md bg-gray-50 px-6 text-sm font-medium text-gray-950 transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950"
+                                className="inline-flex h-10 items-center justify-center rounded-md bg-gray-50 px-6 text-sm font-medium text-gray-950 transition-colors hover:bg-gray-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950 dark:bg-purple-500"
                                 href="/login"
                             >
                                 Get Started
                             </Link>
                             <Link
                                 className="inline-flex h-10 items-center justify-center rounded-md border border-gray-700 px-6 text-sm font-medium transition-colors hover:bg-gray-800 hover:text-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-950"
-                                href="#"
+                                href="/explore-features"
                             >
                                 Explore Features
                             </Link>

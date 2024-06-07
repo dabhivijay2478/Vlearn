@@ -183,7 +183,10 @@ print(square(5))`)
                         >
                             <CopyIcon className="h-5 w-5" />
                         </Button>
-                        <Button variant="secondary" size="sm" className="flex items-center gap-2" />
+                        <Button variant="secondary" size="sm" className="flex items-center gap-2">
+                            <RefreshCcwIcon className="h-4 w-4" />
+                            Refine with AI
+                        </Button>
                     </CardFooter>
                 </Card>
             </div>
