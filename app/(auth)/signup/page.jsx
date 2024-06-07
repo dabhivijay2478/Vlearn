@@ -26,6 +26,15 @@ export default function SignupFrom() {
                     </div>
                     <div className="grid gap-4">
                         <div className="grid gap-2">
+                            <Label htmlFor="email">UserName</Label>
+                            <Input
+                                id="UserNamer"
+                                type="text"
+                                placeholder="Vlearn123"
+                                required
+                            />
+                        </div>
+                        <div className="grid gap-2">
                             <Label htmlFor="email">Email</Label>
                             <Input
                                 id="email"
@@ -39,14 +48,14 @@ export default function SignupFrom() {
                                 <Label htmlFor="password">Password</Label>
 
                             </div>
-                            <Input id="password" type="password" required  placeholder="Enter The Password"/>
+                            <Input id="password" type="password" required placeholder="Enter The Password" />
                         </div>
                         <div className="grid gap-2">
                             <div className="flex items-center">
                                 <Label htmlFor="password">Confirm Password</Label>
 
                             </div>
-                            <Input id="password" type="password" required  placeholder="Re-Enter The Password"/>
+                            <Input id="password" type="password" required placeholder="Re-Enter The Password" />
 
                         </div>
                         <div className="flex flex-col space-y-4">
