@@ -1,9 +1,9 @@
 'use client'
-import Header from "./LandingPage/Header";
-import Hero1 from "./LandingPage/Hero1";
-import Hero2 from "./LandingPage/Hero2";
-import Hero3 from "./LandingPage/Hero3";
-import GetStarted from "./LandingPage/GetStarted";
+import Header from "./(public)/LandingPage/Header";
+import Hero1 from "./(public)/LandingPage/Hero1";
+import Hero2 from "./(public)/LandingPage/Hero2";
+import Hero3 from "./(public)/LandingPage/Hero3";
+import GetStarted from "./(public)/LandingPage/GetStarted";
 
 export default function LandingPage() {
 

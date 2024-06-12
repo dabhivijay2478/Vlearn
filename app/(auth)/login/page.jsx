@@ -1,6 +1,7 @@
 'use client'
 import Link from "next/link"
 
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -12,14 +13,8 @@ import {
 } from "@tabler/icons-react";
 import animationURL from "@/animations/lottie/login2.json";
 import BottomGradient from "@/components/HoverEffects/BottomGradient"
-import { useState } from "react"
 
-
-
-import { getData } from "@/app/services/users"
-
-
-
+import { getData } from "@/Services/users"
 
 
 export default function Loginfrom() {

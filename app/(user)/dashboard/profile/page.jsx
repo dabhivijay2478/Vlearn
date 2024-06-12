@@ -1,6 +1,6 @@
 'use client'
 import { Separator } from "@/components/ui/separator"
-import { ProfileForm } from "@/app/dashboard/profile/profile-form"
+import { ProfileForm } from "@/app/(user)/dashboard/profile/profile-form"
 
 export default function SettingsProfilePage() {
   return (

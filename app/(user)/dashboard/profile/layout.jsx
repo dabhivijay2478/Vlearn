@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import { Separator } from "@/components/ui/separator";
-import { SidebarNav } from "@/app/dashboard/profile/components/sidebar-nav";
+import { SidebarNav } from "@/app/(user)/dashboard/profile/components/sidebar-nav";
 
 // export const metadata = {
 //   title: "Forms",

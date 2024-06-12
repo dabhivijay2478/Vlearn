@@ -20,10 +20,22 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+
+
+    isVerfied: {
+        type: Boolean,
+        default: false,
+    },
     isAdmin: {
         type: Boolean,
         default: false
     },
+    forgotPasswordToken: String,
+    forgotPasswordTokenExpiry: Date,
+    verifyToken: String,
+    verifyTokenExpiry: Date,
+
+
     tokens: [
         {
             token: {
@@ -32,6 +44,8 @@ const userSchema = new mongoose.Schema({
             }
         }
     ],
+
+    
     createdAt: {
         type: Date,
         default: Date.now

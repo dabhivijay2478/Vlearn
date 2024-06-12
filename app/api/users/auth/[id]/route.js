@@ -1,4 +1,4 @@
-import User from '@/app/api/models/user';
+import User from '@/models/user';
 import connectToDatabase from '@/app/lib/dbConnect';
 export const dynamic = 'force-dynamic'
 export async function GET(request, { params }) {
