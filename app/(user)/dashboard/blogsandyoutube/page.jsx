@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input"
 import { CardTitle, CardHeader, CardContent, Card } from "@/components/ui/card"
 import Link from "next/link"
 import Image from 'next/image'
-import Logo from "@/public/Logo.png"
+import Logo from "@/public/logo.png"
 export default function blogsandyoutube() {
     return (
         <div className="">
