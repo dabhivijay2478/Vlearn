@@ -1,5 +1,5 @@
 import connectToDatabase from '@/Config/dbConnect';
-import Languages from '@/models/languageSchema ';
+import Language from '@/models/languageSchema ';
 import { NextResponse } from 'next/server';
 
 connectToDatabase();
@@ -18,13 +18,13 @@ export async function POST(req) {
         }
 
         // Check if the language already exists
-        const existingLanguage = await Languages.findOne({ name });
+        const existingLanguage = await Language.findOne({ name });
         if (existingLanguage) {
             return NextResponse.json({ error: 'Language already exists' });
         }
 
         // Create a new language
-        const newLanguage = new Languages({ name });
+        const newLanguage = new Language({ name });
         await newLanguage.save();
 
         return NextResponse.json({ message: 'Language added successfully', language: newLanguage });
@@ -38,7 +38,7 @@ export async function GET(req) {
 
 
     try {
-        const languages = await Languages.find({});
+        const languages = await Language.find({});
         return NextResponse.json({ languages });
     } catch (error) {
         return NextResponse.json({ error: 'Internal Server Error' });
