@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
     username: {
@@ -20,11 +19,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-
-
-    isVerfied: {
+    isVerified: {
         type: Boolean,
-        default: false,
+        default: false
     },
     isAdmin: {
         type: Boolean,
@@ -34,18 +31,37 @@ const userSchema = new mongoose.Schema({
     forgotPasswordTokenExpiry: Date,
     verifyToken: String,
     verifyTokenExpiry: Date,
-
-
-    tokens: [
-        {
-            token: {
-                type: String,
-                required: true
-            }
+    name: {
+        type: String,
+        minlength: [3, 'Name must be at least 3 characters long'],
+        maxlength: [50, 'Name must be less than 50 characters long']
+    },
+    bio: {
+        type: String,
+        maxlength: [500, 'Bio must be less than 500 characters long']
+    },
+    urls: {
+        type: [String],
+        validate: {
+            validator: function (v) {
+                return v.every(url => /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/.test(url));
+            },
+            message: 'Please enter valid URLs'
         }
-    ],
-
-    
+    },
+    dateOfBirth: {
+        type: Date,
+        validate: {
+            validator: function (v) {
+                return v instanceof Date && !isNaN(v);
+            },
+            message: 'Please enter a valid date'
+        }
+    },
+    theme: {
+        type: String,
+        enum: ['light', 'dark', 'system']
+    },
     createdAt: {
         type: Date,
         default: Date.now
@@ -63,17 +79,6 @@ userSchema.pre("save", async function (next) {
     this.updatedAt = Date.now();
     next();
 });
-
-userSchema.methods.generateAuthToken = async function () {
-    try {
-        let token = jwt.sign({ _id: this._id }, process.env.SECRET_KEY, { expiresIn: '1h' });
-        this.tokens = this.tokens.concat({ token: token });
-        await this.save();
-        return token;
-    } catch (error) {
-        throw error;
-    }
-};
 
 const User = mongoose.models.User || mongoose.model('User', userSchema);
 module.exports = User;
