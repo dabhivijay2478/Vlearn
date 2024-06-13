@@ -1,9 +1,6 @@
 import { NextResponse } from 'next/server';
 import CheatSheet from '@/models/cheatSheetSchema';
 import connectToDatabase from  '@/Config/dbConnect';
-import Language from '@/models/languageSchema ';
-
-
 
 
 connectToDatabase()
