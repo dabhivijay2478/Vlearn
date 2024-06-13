@@ -1,5 +1,5 @@
 import User from '@/models/userSchema';
-import connectToDatabase from '@/app/lib/dbConnect';
+import connectToDatabase from '@/Config/dbConnect';
 export const dynamic = 'force-dynamic'
 export async function GET(request, { params }) {
     await connectToDatabase();

@@ -1,5 +1,5 @@
 import User from '@/models/userSchema';
-import connectToDatabase from '@/app/lib/dbConnect';
+import connectToDatabase from '@/Config/dbConnect';
 import { NextResponse } from "next/server";
 
 export async function POST(req) {
