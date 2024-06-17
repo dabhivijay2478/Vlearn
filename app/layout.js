@@ -13,11 +13,14 @@ export const metadata = {
 };
 import { ThemeProvider } from "@/components/theme-provider"
 import { Toaster } from "@/components/ui/toaster"
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
 
       <body className={inter.className}>
+
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -29,6 +32,7 @@ export default function RootLayout({ children }) {
           <Toaster />
         </ThemeProvider>
       </body>
+
     </html>
   );
 }

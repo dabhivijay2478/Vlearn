@@ -1,28 +1,29 @@
-import User from '@/models/userSchema';
 import connectToDatabase from '@/Config/dbConnect';
-import { NextResponse } from "next/server";
+import User from '@/models/userSchema';
+import { NextResponse } from 'next/server';
 
+connectToDatabase()
 export async function POST(req) {
-    await connectToDatabase();
-    const { username, email, password } = await req.json();
-
-
-    if (!username || !email || !password) {
-        return NextResponse.json({ error: 'All fields are required' });
-    }
-
     try {
-        const existingUser = await User.findOne({ email });
-        if (existingUser) {
-            return NextResponse.json({ error: 'Email already exists' });
+        const { username, email, password } = await req.json();
+
+        // Validate input
+        if (!username || !email || !password) {
+            return NextResponse.json({ error: 'All fields are required.' }, { status: 400 });
         }
 
-        const user = new User({ username, email, password });
-        await user.save();
+        // Check if user already exists
+        const existingUser = await User.findOne({ $or: [{ username }, { email }] });
+        if (existingUser) {
+            return NextResponse.json({ error: 'User with this username or email already exists.' }, { status: 400 });
+        }
 
-        const token = await user.generateAuthToken();
-        return NextResponse.json({ user, token });
+        // Create new user
+        const newUser = new User({ username, email, password });
+        await newUser.save();
+
+        return NextResponse.json({ message: 'User registered successfully.' }, { status: 201 });
     } catch (error) {
-        return NextResponse.json({ error: 'Internal server error' });
+        return NextResponse.json({ error: 'An error occurred during registration.' }, { status: 500 });
     }
 }

@@ -13,6 +13,8 @@ import {
 } from "@tabler/icons-react";
 import BottomGradient from "@/components/HoverEffects/BottomGradient"
 import { User } from "lucide-react";
+
+
 export default function SignupFrom() {
     return (
         <div className="w-full lg:grid lg:min-h-[700px] lg:grid-cols-2 xl:min-h-[700px]">
