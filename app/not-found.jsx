@@ -15,7 +15,7 @@ export default function NotFound() {
                     autoplay
 
                 />
-                <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
+                <h1 className="text-4xl font-bold tracking-tight text-gray-900 border  dark:text-gray-100 sm:text-5xl">
                     Oops! Page not found.
                 </h1>
                 <p className="text-gray-500 dark:text-gray-400 text-lg">

@@ -35,12 +35,14 @@ import { Input } from "@/components/ui/input";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import Logo from "../../../../public/logo.png"
-
+import { signOut } from 'next-auth/react';
+import { useToast } from '../../use-toast';
 
 
 
 export default function Navbar() {
     const pathname = usePathname();
+    const { toast } = useToast()
     const generateBreadcrumbItems = () => {
         const pathSegments = pathname.split('/').filter(segment => segment !== '');
         let currentPath = ''; // Initialize currentPath
@@ -180,14 +182,29 @@ export default function Navbar() {
                     <DropdownMenuSeparator />
                     <DropdownMenuItem >
                         <Link
-                            href="/"
+                            href="#"
+                            onClick={() =>
+
+                                signOut(
+                                    {
+                                        callbackUrl: '/'
+                                    },
+                                    toast(
+                                        {
+                                            variant: "destructive",
+                                            description: "Logout in successfully!",
+                                        }
+                                    )
+                                )
+                            }
                             className=" rounded-lg  transition-colors hover:text-foreground cursor-pointer"
                         >
                             Logout
                         </Link>
+
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
-        </header>
+        </header >
     );
 }

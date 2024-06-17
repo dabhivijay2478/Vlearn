@@ -8,11 +8,15 @@ import { TextGenerateEffect } from "../../../components/ui/text-generate-effect"
 import FeedBack from '@/components/FeedBack';
 
 export default function Dashboard() {
+
     const Welcome = `Welcome back, John!`;
     const words = `Dive into your personalized learning journey and explore new courses to expand your knowledge.`;
-
+ 
     return (
         <main className="flex flex-col gap-12 py-12 md:py-16 lg:py-20">
+
+          
+
             <div className="grid gap-6 lg:grid-cols-1 xl:grid-cols-2 lg:gap-12 xl:gap-16 container px-4 md:px-6">
                 <div className="flex flex-col justify-center space-y-4">
                     <div className="space-y-2">
@@ -274,3 +278,6 @@ function PieChart(props) {
         </div>
     );
 }
+
+
+
